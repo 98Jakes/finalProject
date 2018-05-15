@@ -6,7 +6,7 @@ def generateRandomNumber(numLetter):
     
 def randomNumAssignment(numLetter, randInt):
     lowerCase = string.ascii_lowercase
-    print(lowerCase[numLetter])
+    generateRandomNumber(lowerCase[numLetter])
     
 def main():
     userSeed = int(input("Please enter a seed number, an integer."))
