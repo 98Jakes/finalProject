@@ -1,10 +1,18 @@
+
 import string
 import random
 
 def generateRandomNumber(numLetter):
+    a = [0] * 26
+    b = [0] * 5
+    for x in range(0, 26):
+        for i in range(0, 5):
+            b[i] = random.randint(0,9)
+        a[x] = b
+    print(a)
+    print(b)
     
-    
-def randomNumAssignment(numLetter, randInt):
+def randomNumAssignment(numLetter):
     lowerCase = string.ascii_lowercase
     generateRandomNumber(lowerCase[numLetter])
     
@@ -18,3 +26,4 @@ def main():
         randomNumAssignment(x)
     
 main()
+
