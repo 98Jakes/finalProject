@@ -3,7 +3,7 @@ import string
 import random
 
 def generateRandomNumber(numLetter):
-    
+    for x in range (0, 26):
     
 def randomNumAssignment(numLetter, randInt):
     lowerCase = string.ascii_lowercase
