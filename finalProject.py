@@ -1,5 +1,9 @@
-print("someday")
-<<<<<<< HEAD
-=======
-print("We will survive")
->>>>>>> 6221e1fb7c3e3e77ad96d81b95070111b35705a9
+import string
+def randomNumAssignment(numLetter):
+    lowerCase = string.ascii_lowercase
+    print(lowerCase[numLetter])
+def main():
+    for x in range(0, 26):
+        randomNumAssignment(x)
+    
+main()
