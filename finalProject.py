@@ -7,22 +7,19 @@ def generateRandomNumber(index):
     for x in range(0, 26):
         encryptionArray = [0] * 5
         for i in range(0, 5):
-<<<<<<< HEAD
-            b[i] = random.randint(0,9)
         a[x] = b
     print(a)
     print(b)
     
     
 def randomNumAssignment(numLetter):
-=======
-            encryptionArray[i] = random.randint(0,9)
-            numLetterArray[x] = encryptionArray
+
+    encryptionArray[i] = random.randint(0,9)
+    numLetterArray[x] = encryptionArray
      
     return numLetterArray[index]
      
 def generateForEachLetter(userString):
->>>>>>> 580c5fa0ea278a5b1ecf93ac4d385b946a59d0fe
     lowerCase = string.ascii_lowercase
     userStringLen = len(userString)
      
