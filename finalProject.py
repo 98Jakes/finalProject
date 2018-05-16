@@ -57,18 +57,12 @@ def createListOfInts(newFile):
             
     return justIntegers
 
-def cut5(a, b):
+def new5(a):
     newString = ""
-    restOfString = ""
     for x in range(0,5):
         newString = newString + a[x]
-    for c in range(5, len(a)):
-        restOfString = restOfString + a[c]
         
-    if(b == True):
-        return newString
-    elif(b == False):
-        return restOfString
+    return newString
     
     
     
@@ -79,9 +73,20 @@ def readFile():
     
     integerList = createListOfInts(lines)
     
-    cut5(integerList, True)
-    print(integerList)
+    arrayLength = int(len(integerList) / 5)
     
+    b = [0] * arrayLength
+    a = [0] * 5
+    
+    newVal = new5(integerList)
+    
+    print(newVal)
+    
+    for x in range(0,5):
+        a[x] = int(newVal[x])
+        
+    print(a)
+        
     
             
     
