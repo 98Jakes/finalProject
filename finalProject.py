@@ -65,7 +65,23 @@ def readFile():
     file.close()
     
     integerList = createListOfInts(lines)
- 
+    
+    a = [0] * len(integerList)
+    num1 = 0
+    
+    for x in integerList:
+        b = [0] * 5
+        bnum1 = 0
+        while(num1 < len(integerList) and bnum1 < 5):
+            for i in range(0, 5):
+                b[bnum1] = x
+                bnum1 = bnum1 + 1
+                a[num1] = b
+                num1 = num1 + 1
+            
+    print(a)
+        
+        
     print(integerList)
             
     
