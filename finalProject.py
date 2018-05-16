@@ -49,12 +49,19 @@ def output():
     
 
 def readFile():
-    text_file = open("output.txt", "r")
-    lines = text_file.readlines()
-    print(lines)
-
-    text_file.close()
+    file = open("output.txt", "r")
+    lines = list(file.readlines())
+    file.close()
     
+    arrayOfNewValues = [0] * len(lines)
+    for i in range(0, len(lines)):
+        for x in lines:
+            if(x == "[" or x == "]" or x == " " or x == ","):
+                break
+            elif x:
+                arrayOfNewValues[i] = int(x)
+                
+    print(type(arrayOfNewValues[0]))
 def main():
     output()
     readFile()
