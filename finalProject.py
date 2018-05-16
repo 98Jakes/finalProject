@@ -34,9 +34,8 @@ def generateForEachLetter(userString):
                 encryptedData[i] = generateRandomNumber(x)
      
     return encryptedData
-     
-     
-def main():
+    
+def output():
     userSeed = int(input("Please enter a seed number, an integer."))
     random.seed(userSeed)
      
@@ -45,11 +44,19 @@ def main():
      
     encryptedString = ''.join(str(e) for e in encryptedData)
      
-     
-    print(encryptedString)
-     
     with open('output.txt', 'w') as output:
         output.write(encryptedString)
     
+
+def readFile():
+    text_file = open("output.txt", "r")
+    lines = text_file.readlines()
+    print(lines)
+
+    text_file.close()
+    
+def main():
+    output()
+    readFile()
      
 main()
