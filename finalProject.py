@@ -7,10 +7,7 @@ def generateRandomNumber(index):
     for x in range(0, 26):
         encryptionArray = [0] * 5
         for i in range(0, 5):
-        a[x] = b
-    print(a)
-    print(b)
-    
+            numLetterArray[x] = encryptionArray[i]
     
 def randomNumAssignment(numLetter):
 
