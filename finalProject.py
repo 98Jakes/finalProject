@@ -47,11 +47,9 @@ def createListOfInts(newFile):
         a[m] = list(x)
         m = m + 1
     
-    newVal = ""
     for x in range(0, len(newFile)):
         if(a[x] == ['0'] or a[x] == ['1'] or a[x] == ['2'] or a[x] == ['3'] or a[x] == ['4'] or a[x] == ['5'] or a[x] == ['6'] or a[x] == ['7'] or a[x] == ['8'] or a[x] == ['9']):
             newVal = newVal + str(a[x])
-            
     
     for i in range(0, len(newVal)):
         if(newVal[i] == '0' or newVal[i] == '1' or newVal[i] == '2' or newVal[i] == '3' or newVal[i] == '4' or newVal[i] == '5' or newVal[i] == '6' or newVal[i] == '7' or newVal[i] == '8' or newVal[i] == '9'):
@@ -59,6 +57,21 @@ def createListOfInts(newFile):
             
     return justIntegers
 
+def cut5(a, b):
+    newString = ""
+    restOfString = ""
+    for x in range(0,5):
+        newString = newString + a[x]
+    for c in range(5, len(a)):
+        restOfString = restOfString + a[c]
+        
+    if(b == True):
+        return newString
+    elif(b == False):
+        return restOfString
+    
+    
+    
 def readFile():
     file = open("output.txt", "r")
     lines = str(file.readlines())
@@ -66,23 +79,10 @@ def readFile():
     
     integerList = createListOfInts(lines)
     
-    a = [0] * len(integerList)
-    num1 = 0
-    
-    for x in integerList:
-        b = [0] * 5
-        bnum1 = 0
-        while(num1 < len(integerList) and bnum1 < 5):
-            for i in range(0, 5):
-                b[bnum1] = x
-                bnum1 = bnum1 + 1
-                a[num1] = b
-                num1 = num1 + 1
-            
-    print(a)
-        
-        
+    cut5(integerList, True)
     print(integerList)
+    
+    
             
     
 def main():
