@@ -1,6 +1,32 @@
 import string
 import random
- 
+#====================================================================
+def cut5 (thatstring):
+    newstring = ""
+    restofstring = ""
+    for i in range (0, 5):
+        newstring = newstring + str(thatstring[i])
+    for x in range (5, len(thatstring)):
+        restofstring = restofstring + str(thatstring[x])
+    return newstring
+
+def take5 (thatstring):
+    restofstring = ""
+    for x in range (5, len(thatstring)):
+        restofstring = restofstring + str(thatstring[x])
+    return restofstring
+    
+def fillArray (instring):
+    newstring = instring
+    while (len(newstring) > 0):
+        ariel = [0]*(len(newstring)//5)
+        for x in range(0, (len(newstring)//5)):
+            ariel[x] = cut5(newstring)
+            newstring = take5(newstring)
+    print(ariel)
+#====================================================================
+
+
 # function generates array of random numbers, turns them into integers, and assigns them to letter of alphabet
 def generateRandomNumber(index):
     numLetterArray = [0] * 26
@@ -26,10 +52,10 @@ def generateForEachLetter(userString):
     return encryptedData
     
 def output():
-    userSeed = int(input("Please enter a seed number, an integer."))
+    userSeed = int(input("Please enter a seed number, an integer. "))
     random.seed(userSeed)
      
-    userString = str(input("What is the message you want to encrypt?"))
+    userString = str(input("What is the message you want to encrypt? "))
     encryptedData = generateForEachLetter(userString)
     
     encryptedString = ''.join(str(e) for e in encryptedData)
