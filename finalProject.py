@@ -9,7 +9,7 @@ def generateRandomNumber(index):
         for i in range(0, 5):
             encryptionArray[i] = random.randint(0,9)
             numLetterArray[x] = encryptionArray
-     
+        
     return numLetterArray[index]
      
 def generateForEachLetter(userString):
@@ -31,27 +31,44 @@ def output():
      
     userString = str(input("What is the message you want to encrypt?"))
     encryptedData = generateForEachLetter(userString)
-     
+    
     encryptedString = ''.join(str(e) for e in encryptedData)
      
     with open('output.txt', 'w') as output:
         output.write(encryptedString)
     
+def createListOfInts(newFile):
+    newVal = ""
+    justIntegers = ""
+    
+    m = 0
+    a = [0] * len(newFile)
+    for x in newFile:
+        a[m] = list(x)
+        m = m + 1
+    
+    newVal = ""
+    for x in range(0, len(newFile)):
+        if(a[x] == ['0'] or a[x] == ['1'] or a[x] == ['2'] or a[x] == ['3'] or a[x] == ['4'] or a[x] == ['5'] or a[x] == ['6'] or a[x] == ['7'] or a[x] == ['8'] or a[x] == ['9']):
+            newVal = newVal + str(a[x])
+            
+    
+    for i in range(0, len(newVal)):
+        if(newVal[i] == '0' or newVal[i] == '1' or newVal[i] == '2' or newVal[i] == '3' or newVal[i] == '4' or newVal[i] == '5' or newVal[i] == '6' or newVal[i] == '7' or newVal[i] == '8' or newVal[i] == '9'):
+            justIntegers = justIntegers + newVal[i]
+            
+    return justIntegers
 
 def readFile():
     file = open("output.txt", "r")
-    lines = list(file.readlines())
+    lines = str(file.readlines())
     file.close()
     
-    arrayOfNewValues = [0] * len(lines)
-    for i in range(0, len(lines)):
-        for x in lines:
-            if(x == "[" or x == "]" or x == " " or x == ","):
-                break
-            elif x:
-                arrayOfNewValues[i] = int(x)
-                
-    print(type(arrayOfNewValues[0]))
+    integerList = createListOfInts(lines)
+ 
+    print(integerList)
+            
+    
 def main():
     output()
     readFile()
