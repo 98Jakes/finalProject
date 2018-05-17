@@ -46,4 +46,4 @@ for x in range (0, len(stringnum)):
             
 ##print (newstr)
 ##print (array)
-print (cut5(stringnum))
+##print (cut5(stringnum))
