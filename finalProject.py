@@ -9,13 +9,14 @@ def generateRandomNumber(index):
         for i in range(0, 5):
             encryptionArray = encryptionArray + str(random.randint(0,9))
             numLetterArray[x] = encryptionArray
-            
+    
+    print(numLetterArray)
     return numLetterArray[index]
      
 def generateForEachLetter(userString):
     lowerCase = string.ascii_lowercase
     userStringLen = len(userString)
-     
+    
     encryptedData = [0] * userStringLen
  
     for i in range (0, userStringLen):
