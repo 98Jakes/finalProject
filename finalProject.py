@@ -1,5 +1,6 @@
 import string
 import random
+<<<<<<< HEAD
 #====================================================================
 def cut5 (thatstring):
     newstring = ""
@@ -28,21 +29,25 @@ def fillArray (instring):
 #====================================================================
 
 
+=======
+ 
+>>>>>>> 7eeac2974c225132eea2c60af46721259b1e6148
 # function generates array of random numbers, turns them into integers, and assigns them to letter of alphabet
 def generateRandomNumber(index):
     numLetterArray = [0] * 26
     for x in range(0, 26):
-        encryptionArray = [0] * 5
+        encryptionArray = ""
         for i in range(0, 5):
-            encryptionArray[i] = random.randint(0,9)
+            encryptionArray = encryptionArray + str(random.randint(0,9))
             numLetterArray[x] = encryptionArray
-        
+    
+    print(numLetterArray)
     return numLetterArray[index]
      
 def generateForEachLetter(userString):
     lowerCase = string.ascii_lowercase
     userStringLen = len(userString)
-     
+    
     encryptedData = [0] * userStringLen
  
     for i in range (0, userStringLen):
@@ -53,10 +58,10 @@ def generateForEachLetter(userString):
     return encryptedData
     
 def output():
-    userSeed = int(input("Please enter a seed number, an integer. "))
+    userSeed = int(input("Please enter a seed number, an integer."))
     random.seed(userSeed)
      
-    userString = str(input("What is the message you want to encrypt? "))
+    userString = str(input("What is the message you want to encrypt?"))
     encryptedData = generateForEachLetter(userString)
     
     encryptedString = ''.join(str(e) for e in encryptedData)
@@ -91,29 +96,20 @@ def new5(a):
         
     return newString
     
+
     
     
 def readFile():
     file = open("output.txt", "r")
-    lines = str(file.readlines())
+    lines = file.readlines()
     file.close()
     
-    integerList = createListOfInts(lines)
+    print(lines)
+     
+    newString = lines[0]
     
-    arrayLength = int(len(integerList) / 5)
+    print(newString)
     
-    b = [0] * arrayLength
-    a = [0] * 5
-    
-    newVal = new5(integerList)
-    
-    print(newVal)
-    
-    for x in range(0,5):
-        a[x] = int(newVal[x])
-        
-    print(a)
-        
     
             
     
