@@ -5,11 +5,11 @@ import random
 def generateRandomNumber(index):
     numLetterArray = [0] * 26
     for x in range(0, 26):
-        encryptionArray = [0] * 5
+        encryptionArray = ""
         for i in range(0, 5):
-            encryptionArray[i] = random.randint(0,9)
+            encryptionArray = encryptionArray + str(random.randint(0,9))
             numLetterArray[x] = encryptionArray
-        
+            
     return numLetterArray[index]
      
 def generateForEachLetter(userString):
@@ -64,29 +64,20 @@ def new5(a):
         
     return newString
     
+
     
     
 def readFile():
     file = open("output.txt", "r")
-    lines = str(file.readlines())
+    lines = file.readlines()
     file.close()
     
-    integerList = createListOfInts(lines)
+    print(lines)
+     
+    newString = lines[0]
     
-    arrayLength = int(len(integerList) / 5)
+    print(newString)
     
-    b = [0] * arrayLength
-    a = [0] * 5
-    
-    newVal = new5(integerList)
-    
-    print(newVal)
-    
-    for x in range(0,5):
-        a[x] = int(newVal[x])
-        
-    print(a)
-        
     
             
     
